@@ -1,12 +1,37 @@
+<ul class="nav nav-tabs">
+         <li ng-class="{active: activetab == '/'}"><a href="#/disciplinas">Disciplinas</a></li>
+      </ul>
 <div  ng-controller="AssuntosController as Assunto">
-<a ng-repeat="list in Assunto.listarAssuntos" class="btn btn-primary" ng-click="Assunto.Show(list)"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
+<div id="subjects" class="row">
+        <div class="col-xs-12 col-sm-4">
+          <h3>Próximos Eventos</h3>
+          <ul class="list-group">
+
+            <li class="list-group-item" ng-repeat="list in Assunto.listarEventos">
+             
+              <span class="label label-primary" ng-show="list.Date == 'Agora'">{{list.Date}}</span>
+              <span class="label label-success" ng-show="list.Date != 'Agora'">{{list.Date}}</span>
+              
+              	<h4>{{list.Name}} </h4>
+
+              	{{list.Person}}
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-8">
+          <h3>Assuntos</h3>
+          <h4 ng-repeat="list in Assunto.listarAssuntos" class="pull-left">
+			<a ng-href="#/videos/{{Assunto.id_disciplina}}/{{list.Id}}">
+          		<span class="label label-default">{{list.Name}}</span>
+          	</a>
+          </h4>
+          
+        </div>
+      </div>
+ </div>
+
 <hr />
-<a ng-repeat="list in Assunto.listarEventos" class="btn btn-primary"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
-<hr />
-<div ng-repeat="video in Assunto.videos">
-	<a ng-href="#/video/{{video.id.videoId}}"><img ng-src="{{video.snippet.thumbnails.medium.url}}" />	</a>
-	{{video.snippet.title}}
-	<br>
-	{{video.snippet.description}}
 </div>
-</div>
+

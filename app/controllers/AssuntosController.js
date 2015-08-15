@@ -1,6 +1,6 @@
 app.controller('AssuntosController', function (get, ytService, $routeParams){
 	Assunto = this;
-	Assunto.id = $routeParams.id;
+	Assunto.id = Assunto.id_disciplina = $routeParams.id;
 	get.disciplinas()
 	.success(function(result){
 		Assunto.Disciplinas = result.Disciplines;
