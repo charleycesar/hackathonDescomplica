@@ -1,0 +1,5 @@
+<div  ng-controller="AssuntosController as Assunto">
+<a ng-repeat="list in Assunto.listarAssuntos" class="btn btn-primary"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
+<hr />
+<a ng-repeat="list in Assunto.listarEventos" class="btn btn-primary"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
+</div>

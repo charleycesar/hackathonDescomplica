@@ -1,0 +1,3 @@
+<div  ng-controller="DisciplinasController as Disciplina">
+	<a ng-repeat="list in Disciplina.result" class="btn btn-primary" href="#/disciplinas/{{list.Id}}"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</button>
+</div>	

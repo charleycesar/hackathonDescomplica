@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Comsumir</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body ng-app="PVC">
+	 <ul class="nav nav-tabs">
+         <li ng-class="{active: activetab == '/'}"><a href="#/disciplinas">Disciplinas</a></li>
+      </ul>
+	      <div ng-view></div>
+
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.min.js"></script>
+<script type="text/javascript" src="app/main.js"></script>
+<script type="text/javascript" src="app/controllers/ControllerDisciplina.js"></script>
+<script type="text/javascript" src="app/controllers/AssuntosController.js"></script>
+<script type="text/javascript" src="get-service.js"></script>
+<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
