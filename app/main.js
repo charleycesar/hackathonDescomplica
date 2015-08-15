@@ -15,6 +15,10 @@ app.config(function ($routeProvider, $locationProvider){
       templateUrl : 'app/views/assuntos.html',
       controller  : 'AssuntosController',
    })
+   .when('/video/:id', {
+      templateUrl : 'app/views/video.html',
+      controller  : 'VideosController',
+   })
  
    // caso não seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });

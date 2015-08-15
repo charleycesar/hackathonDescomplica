@@ -1,5 +1,12 @@
 <div  ng-controller="AssuntosController as Assunto">
-<a ng-repeat="list in Assunto.listarAssuntos" class="btn btn-primary"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
+<a ng-repeat="list in Assunto.listarAssuntos" class="btn btn-primary" ng-click="Assunto.Show(list)"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
 <hr />
 <a ng-repeat="list in Assunto.listarEventos" class="btn btn-primary"><span class="glyphicon glyphicon-tags"></span> #{{list.Name}}</a>	
+<hr />
+<div ng-repeat="video in Assunto.videos">
+	<a ng-href="#/video/{{video.id.videoId}}"><img ng-src="{{video.snippet.thumbnails.medium.url}}" />	</a>
+	{{video.snippet.title}}
+	<br>
+	{{video.snippet.description}}
+</div>
 </div>
